@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>MAPA DIGITAL</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+  <style>
+    body { margin:0; padding:0; font-family: Arial, sans-serif; }
+    #mapFrame {
+      border: 3px solid #2c3e50;
+      border-radius: 8px;
+      margin: 10px;
+      padding: 5px;
+      background: #f4f6f9;
+    }
+    #map { height: 60vh; width: 100%; }
+    #controls { padding: 10px; background: #fff; border-bottom: 1px solid #ccc; }
+    label { font-weight: bold; margin-right: 10px; }
+    select { padding: 5px; margin-right: 10px; }
+    #coords { padding: 5px; font-size: 14px; background: #fff; border-top: 1px solid #ccc; }
+    .coords-box {
+      background: rgba(255,255,255,0.9);
+      padding: 5px;
+      font-size: 13px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      background: #fff;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 6px;
+      text-align: center;
+    }
+    th { background: #3498db; color: #fff; }
+    tr:hover { background: #f1f1f1; }
+    button {
+      margin-top: 10px;
+      padding: 8px 15px;
+      background: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover { background: #2980b9; }
+  </style>
+    <style>
+    body { margin:0; font-family: Arial, sans-serif; }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #2c3e50;
+      padding: 10px 20px;
+      color: white;
+    }
+    .logo img {
+      height: 50px; /* Ajusta el tamaño del logo */
+    }
+    nav {
+      display: flex;
+      gap: 15px;
+    }
+    nav a {
+      background: #3498db;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    nav a:hover {
+      background: #2980b9;
+    }
+  </style>
+</head>
+
+<body>
+      <header>
+    <!-- 🔹 Sección del logo -->
+    <div class="logo">
+      <!-- Sustituye "logo.png" por la ruta de tu imagen -->
+      <img src="../IMAGENES/logo.png" alt="Logo del Proyecto"/>
+          </div>
+
+    <!-- 🔹 Menú de navegación -->
+   <nav>
+      <a href="../MNE/INICIO.html">INICIO</a>
+      <a href="../base de datos/BD_presencia1.html">BASE DE DATOS</a>
+      <a href="../MapaDigital/mapadig3.html">MAPA DIGITAL</a>
+      <a href="../MNE/MNE.html">MNE</a>
+      <a href="../ATLAS/ATLAS.html">ATLAS</a>
+      <a href="../Contactos/arturo del Pino.html">CONTACTO</a>
+    </nav>
+  </header>
+  <div id="mapFrame">
+    <div id="controls">
+      <label for="variable">Variable:</label>
+      <select id="variable"><option value="">Todas</option></select>
+
+      <label for="anio">Año:</label>
+      <select id="anio"><option value="">Todos</option></select>
+
+      <label for="mes">Mes:</label>
+      <select id="mes"><option value="">Todos</option></select>
+
+      <label for="colorScale">Escala de colores:</label>
+      <select id="colorScale">
+        <option value="reds">Rojos</option>
+        <option value="blues">Azules</option>
+        <option value="greens">Verdes</option>
+        <option value="viridis">Viridis</option>
+      </select>
+    </div>
+    <div id="map"></div>
+    <div id="coords">Mover el cursor sobre el mapa para ver coordenadas en DMS</div>
+
+    <!-- Tabla dinámica -->
+    <h3>Variables filtradas</h3>
+    <table id="tablaDatos">
+      <thead>
+        <tr>
+          <th>Seleccionar</th>
+          <th>Variable</th>
+          <th>Valor</th>
+          <th>Año</th>
+          <th>Mes</th>
+          <th>Lat</th>
+          <th>Lon</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <button id="btnMostrar">Mostrar seleccionados en el mapa</button>
+  </div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet.graticule"></script>
+  <script>
+    const map = L.map('map').setView([24.142, -110.312], 6);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    L.control.scale({ position: 'bottomleft', imperial: false }).addTo(map);
+    L.graticule({ interval: 1, style: { color: '#555', weight: 1, opacity: 0.7 } }).addTo(map);
+
+    function toDMS(coord, isLat) {
+      const absolute = Math.abs(coord);
+      const degrees = Math.floor(absolute);
+      const minutesNotTruncated = (absolute - degrees) * 60;
+      const minutes = Math.floor(minutesNotTruncated);
+      const seconds = Math.floor((minutesNotTruncated - minutes) * 60);
+      const direction = coord >= 0 ? (isLat ? "N" : "E") : (isLat ? "S" : "W");
+      return `${degrees}°${minutes}'${seconds}" ${direction}`;
+    }
+
+    map.on('mousemove', function(e) {
+      const latDMS = toDMS(e.latlng.lat, true);
+      const lonDMS = toDMS(e.latlng.lng, false);
+      document.getElementById("coords").innerText = `Lat: ${latDMS} | Lon: ${lonDMS}`;
+    });
+
+    function getColor(valor, escala) {
+      if (escala === "reds") {
+        return valor > 100 ? "#800026" :
+               valor > 50  ? "#BD0026" :
+               valor > 20  ? "#E31A1C" : "#FC4E2A";
+      } else if (escala === "blues") {
+        return valor > 100 ? "#08306b" :
+               valor > 50  ? "#2171b5" :
+               valor > 20  ? "#4292c6" : "#6baed6";
+      } else if (escala === "greens") {
+        return valor > 100 ? "#00441b" :
+               valor > 50  ? "#006d2c" :
+               valor > 20  ? "#238b45" : "#41ae76";
+      } else {
+        return valor > 100 ? "#440154" :
+               valor > 50  ? "#3b528b" :
+               valor > 20  ? "#21908d" : "#5dc963";
+      }
+    }
+
+    let datosAmbientales = [];
+    let layerGroup;
+
+    function renderTabla(datos) {
+      const tbody = document.querySelector("#tablaDatos tbody");
+      tbody.innerHTML = "";
+      datos.forEach((d, idx) => {
+        const row = `<tr>
+          <td><input type="checkbox" class="chkFila" data-index="${idx}"></td>
+          <td>${d.variable}</td>
+          <td>${d.valor}</td>
+          <td>${d.anio}</td>
+          <td>${d.mes}</td>
+          <td>${d.lat}</td>
+          <td>${d.lon}</td>
+        </tr>`;
+        tbody.innerHTML += row;
+      });
+    }
+
+    function renderPuntosSeleccionados(escala) {
+      if (layerGroup) map.removeLayer(layerGroup);
+      layerGroup = L.layerGroup();
+
+      const seleccionados = Array.from(document.querySelectorAll(".chkFila:checked"))
+        .map(chk => datosAmbientales[chk.dataset.index]);
+
+      seleccionados.forEach(d => {
+        const color = getColor(d.valor, escala);
+        const marker = L.circleMarker([d.lat, d.lon], {
+          radius: 10,
+          fillColor: color,
+          color: "#000",
+          weight: 1,
+          opacity: 1,
+          fillOpacity: 0.8
+        }).bindPopup(`<b>${d.variable}</b><br>Valor: ${d.valor}<br>${d.mes} ${d.anio}`);
+        layerGroup.addLayer(marker);
+      });
+
+      layerGroup.addTo(map);
+    }
+
+    function aplicarFiltros() {
+      const variableSel = document.getElementById("variable").value;
+      const anioSel = document.getElementById("anio").value;
+      const mesSel = document.getElementById("mes").value;
+
+      const filtrados = datosAmbientales.filter(d =>
+        (!variableSel || d.variable === variableSel) &&
+        (!anioSel || d.anio === anioSel) &&
+        (!mesSel || d.mes === mesSel)
+      );
+      renderTabla(filtrados);
+    }
+
+    function llenarFiltros(datos) {
+      const variables = [...new Set(datos.map(d => d.variable))];
+      const anios = [...new Set(datos.map(d => d.anio))];
+      const meses = [...new Set(datos.map(d => d.mes))];
+            variables.forEach(v => varSelect.innerHTML += `<option>${v}</option>`);
+      anios.forEach(a => anioSelect.innerHTML += `<option>${a}</option>`);
+      meses.forEach(m => mesSelect.innerHTML += `<option>${m}</option>`);
+    }
+// Controles en los márgenes
+L.control({position: 'topleft'}).onAdd = function(map) {
+  const div = L.DomUtil.create('div', 'coords-box');
+  div.id = 'coords-north';
+  div.innerHTML = 'Norte: ...';
+  return div;
+}.addTo(map);
+
+L.control({position: 'bottomleft'}).onAdd = function(map) {
+  const div = L.DomUtil.create('div', 'coords-box');
+  div.id = 'coords-south';
+  div.innerHTML = 'Sur: ...';
+  return div;
+}.addTo(map);
+
+L.control({position: 'topright'}).onAdd = function(map) {
+  const div = L.DomUtil.create('div', 'coords-box');
+  div.id = 'coords-east';
+  div.innerHTML = 'Este: ...';
+  return div;
+}.addTo(map);
+
+L.control({position: 'bottomright'}).onAdd = function(map) {
+  const div = L.DomUtil.create('div', 'coords-box');
+  div.id = 'coords-west';
+  div.innerHTML = 'Oeste: ...';
+  return div;
+}.addTo(map);
+
+// Función para actualizar coordenadas en DMS
+function updateCoords() {
+  const bounds = map.getBounds();
+  document.getElementById("coords-north").innerHTML =
+    "Norte: " + toDMS(bounds.getNorth(), true);
+  document.getElementById("coords-south").innerHTML =
+    "Sur: " + toDMS(bounds.getSouth(), true);
+  document.getElementById("coords-east").innerHTML =
+    "Este: " + toDMS(bounds.getEast(), false);
+  document.getElementById("coords-west").innerHTML =
+    "Oeste: " + toDMS(bounds.getWest(), false);
+}
+
+// Actualizar al mover o hacer zoom
+map.on('moveend', updateCoords);
+updateCoords(); // inicial
+
+    // 🔹 Cargar datos reales desde el DataServlet
+    fetch("DataServlet")
+      .then(res => res.json())
+      .then(datos => {
+        datosAmbientales = datos;
+        llenarFiltros(datosAmbientales);
+        aplicarFiltros(); // inicializa la tabla
+
+        // Eventos de cambio en filtros
+        document.getElementById("variable").addEventListener("change", aplicarFiltros);
+        document.getElementById("anio").addEventListener("change", aplicarFiltros);
+        document.getElementById("mes").addEventListener("change", aplicarFiltros);
+
+        // Evento para mostrar seleccionados en el mapa
+        document.getElementById("btnMostrar").addEventListener("click", () => {
+          const escala = document.getElementById("colorScale").value;
+          renderPuntosSeleccionados(escala);
+        });
+
+        // Cambio de escala de colores
+        document.getElementById("colorScale").addEventListener("change", e => {
+          renderPuntosSeleccionados(e.target.value);
+        });
+      })
+      .catch(err => {
+        console.error("Error cargando datos del DataServlet:", err);
+      });
+  </script>
+</body>
+</html>

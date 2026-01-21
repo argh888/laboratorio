@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Base de Datos Ambiental</title>
+    <style>
+    body { margin:0; font-family: Arial, sans-serif; }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #2c3e50;
+      padding: 10px 20px;
+      color: white;
+    }
+    .logo img {
+      height: 50px; /* Ajusta el tamaño del logo */
+    }
+    nav {
+      display: flex;
+      gap: 15px;
+    }
+    nav a {
+      background: #3498db;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    nav a:hover {
+      background: #2980b9;
+    }
+  </style><style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    form {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background: #3498db;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+    button:hover {
+      background: #2980b9;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    th, td {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      text-align: center;
+    }
+    th {
+      background: #3498db;
+      color: white;
+    }
+    tr:hover {
+      background: #f1f1f1;
+    }
+  </style>
+</head>
+<body>
+      <header>
+    <!-- 🔹 Sección del logo -->
+    <div class="logo">
+      <!-- Sustituye "logo.png" por la ruta de tu imagen -->
+      <img src="../IMAGENES/logo.png" alt="Logo del Proyecto"/>
+          </div>
+
+    <!-- 🔹 Menú de navegación -->
+    <nav>
+      <a href="../MNE/INICIO.html">INICIO</a>
+      <a href="../base de datos/BD_presencia1.html">BASE DE DATOS</a>
+      <a href="../MapaDigital/mapadig3.html">MAPA DIGITAL</a>
+      <a href="../MNE/MNE.html">MNE</a>
+      <a href="../ATLAS/ATLAS.html">ATLAS</a>
+      <a href="../Contactos/arturo del Pino.html">CONTACTO</a>
+    </nav>
+  </header>
+    
+  <h1>🌍 Base de Datos Ambiental</h1>
+
+  <!-- Formulario -->
+  <form id="formObjeto">
+    <label for="id">ID:</label>
+    <input type="text" id="id" required>
+
+    <label for="variable">Variable ambiental:</label>
+    <input type="text" id="variable" placeholder="Ej. Temperatura, Humedad" required>
+
+    <label for="anio">Año:</label>
+    <input type="number" id="anio" min="1900" max="2100" required>
+
+    <label for="mes">Mes:</label>
+    <select id="mes" required>
+      <option value="">Seleccione...</option>
+      <option>Enero</option><option>Febrero</option><option>Marzo</option>
+      <option>Abril</option><option>Mayo</option><option>Junio</option>
+      <option>Julio</option><option>Agosto</option><option>Septiembre</option>
+      <option>Octubre</option><option>Noviembre</option><option>Diciembre</option>
+    </select>
+
+    <!-- Subida de archivo con extensiones permitidas -->
+    <label for="archivo">Archivo (tiff, asc, shp, csv, txt, kml, kmz):</label>
+    <input type="file" id="archivo" 
+           accept=".tiff,.asc,.shp,.csv,.txt,.kml,.kmz" required>
+
+    <button type="submit">Guardar Objeto</button>
+  </form>
+
+   <!-- Sección de búsqueda -->
+  <div class="busqueda">
+    <h2>🔎 Buscar en la base de datos</h2>
+    <label for="buscarVariable">Variable:</label>
+    <input type="text" id="buscarVariable" placeholder="Ej. Temperatura">
+
+    <label for="buscarAnio">Año:</label>
+    <input type="number" id="buscarAnio" min="1900" max="2100">
+
+    <label for="buscarMes">Mes:</label>
+    <select id="buscarMes">
+      <option value="">Todos</option>
+      <option>Enero</option><option>Febrero</option><option>Marzo</option>
+      <option>Abril</option><option>Mayo</option><option>Junio</option>
+      <option>Julio</option><option>Agosto</option><option>Septiembre</option>
+      <option>Octubre</option><option>Noviembre</option><option>Diciembre</option>
+    </select>
+
+    <button onclick="aplicarBusqueda()">Aplicar búsqueda</button>
+  </div>
+
+  <!-- Tabla dinámica -->
+  <table id="tablaObjetos">
+    <thead>
+      <tr>
+        <th>Seleccionar</th>
+        <th>ID</th>
+        <th>Variable Ambiental</th>
+        <th>Año</th>
+        <th>Mes</th>
+        <th>Archivo</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <button onclick="descargarSeleccionados()">Descargar Seleccionados</button>
+
+  <script>
+    const form = document.getElementById("formObjeto");
+    const tabla = document.getElementById("tablaObjetos").querySelector("tbody");
+
+    let objetos = JSON.parse(localStorage.getItem("objetos")) || [];
+    renderTabla(objetos);
+
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      const archivoInput = document.getElementById("archivo");
+      const archivo = archivoInput.files[0];
+      if (!archivo) return;
+
+      const nuevo = {
+        id: document.getElementById("id").value,
+        variable: document.getElementById("variable").value,
+        anio: document.getElementById("anio").value,
+        mes: document.getElementById("mes").value,
+        archivo: archivo.name
+      };
+      objetos.push(nuevo);
+      localStorage.setItem("objetos", JSON.stringify(objetos));
+      form.reset();
+      renderTabla(objetos);
+    });
+
+    function renderTabla(datos) {
+      tabla.innerHTML = "";
+      datos.forEach((obj, index) => {
+        const fila = document.createElement("tr");
+        fila.innerHTML = `
+          <td><input type="checkbox" data-index="${index}"></td>
+          <td>${obj.id}</td>
+          <td>${obj.variable}</td>
+          <td>${obj.anio}</td>
+          <td>${obj.mes}</td>
+          <td>${obj.archivo}</td>
+        `;
+        tabla.appendChild(fila);
+      });
+    }
+
+    function aplicarBusqueda() {
+      const varBuscada = document.getElementById("buscarVariable").value.toLowerCase();
+      const anioBuscado = document.getElementById("buscarAnio").value;
+      const mesBuscado = document.getElementById("buscarMes").value;
+
+      const filtrados = objetos.filter(obj =>
+        (!varBuscada || obj.variable.toLowerCase().includes(varBuscada)) &&
+        (!anioBuscado || obj.anio == anioBuscado) &&
+        (!mesBuscado || obj.mes === mesBuscado)
+      );
+      renderTabla(filtrados);
+    }
+
+    function descargarSeleccionados() {
+      const checks = document.querySelectorAll("input[type='checkbox']:checked");
+      const seleccionados = Array.from(checks).map(ch => objetos[ch.dataset.index]);
+
+      if (seleccionados.length === 0) {
+        alert("No hay elementos seleccionados para descargar.");
+        return;
+      }
+
+      let csv = "ID,Variable,Año,Mes,Archivo\n";
+      seleccionados.forEach(obj => {
+        csv += `${obj.id},${obj.variable},${obj.anio},${obj.mes},${obj.archivo}\n`;
+      });
+
+      const blob = new Blob([csv], { type: "text/csv" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "seleccionados.csv";
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+  </script>
+
+</body>
+</html>

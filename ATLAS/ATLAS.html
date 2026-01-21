@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>ATLAS</title>
+  <style>
+body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+     
+    }
+    
+header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #2c3e50;
+      padding: 10px 20px;
+      color: white;
+    }
+.logo img {
+      height: 50px; /* Ajusta el tamaño del logo */
+    }
+nav {
+      display: flex;
+      gap: 15px;
+    }
+nav a {
+      background: #3498db;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+nav a:hover {
+      background: #2980b9;
+    }
+    /* Contenido principal */
+.content {
+      flex: 1;
+      padding: 20px;
+    }
+
+   /* Panel lateral derecho */
+.sidebar {
+  width: 250px;
+  background: #f4f4f4;
+  border-left: 2px solid #ccc;
+  padding: 10px;
+  position: fixed;       /* Fijo en la pantalla */
+  top: 100px;            /* Ajusta según la altura real del header */
+  right: 0;              /* Pegado al lado derecho */
+  height: calc(100vh - 100px); /* Altura total menos el header */
+  overflow-y: auto;      /* Scroll interno si el contenido es largo */
+}
+
+/* Para que el contenido no quede debajo del sidebar */
+.content {
+  margin-right: 260px;   /* Deja espacio para el panel lateral */
+  padding: 20px;
+}
+.accordion {
+      background-color: #eee;
+      cursor: pointer;
+      padding: 10px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 16px;
+      transition: background-color 0.3s;
+      margin-bottom: 5px;
+    }
+
+.accordion:hover {
+      background-color: #ddd;
+    }
+
+.panel {
+      padding: 0 10px;
+      display: none;
+      background-color: #fafafa;
+      overflow: hidden;
+    }
+
+.panel a {
+      display: block;
+      padding: 5px 0;
+      text-decoration: none;
+      color: #333;
+    }
+
+.panel a:hover {
+      color: #0078d7;
+    }
+
+section {
+      margin-bottom: 50px;
+    }
+img {
+  max-width: 60%;
+  height: auto;
+   }
+.centrar-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+table {
+    margin: 40px auto; /* centra horizontalmente */
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+  }
+
+th, td {
+    border: 1px solid #444;
+    padding: 8px 12px;
+    text-align: center;
+  }
+
+th {
+    background-color: #f2f2f2;
+  }
+
+
+  </style>
+  </head>
+  <body>
+  <header>
+    <!-- 🔹 Sección del logo -->
+    <div class="logo">
+      <!-- Sustituye "logo.png" por la ruta de tu imagen -->
+        <img src="../IMAGENES/logo.png" alt="Logo del Proyecto"/>
+          </div>
+   <!-- 🔹 Menú de navegación -->
+     <nav>
+      <a href="../MNE/INICIO.html">INICIO</a>
+      <a href="../base de datos/BD_presencia1.html">BASE DE DATOS</a>
+      <a href="../MapaDigital/mapadig3.html">MAPA DIGITAL</a>
+      <a href="../MNE/MNE.html">MNE</a>
+      <a href="../ATLAS/ATLAS.html">ATLAS</a>
+      <a href="../Contactos/arturo del Pino.html">CONTACTO</a>
+      
+    </nav>
+  </header>
+    <!-- Contenido principal -->
+    <div class="content">
+    <h1>Atlas de variables ambientales de la Ensenada de La Paz</h1>
+    <!-- Sección Intro -->   
+    <section id="intro">
+ <h1>Localización del área</h2>
+     
+<p>La Laguna de La Paz es del tipo de plataforma interna con barrera, cuya depresión
+está protegida del mar por una barrera arenosa formada por el transporte litoral de
+corrientes generadas por oleajes y mareas). Se localiza en la porción sur de la Bahía
+de la Paz; está ubicada entre las coordenadas geográficas <b>24° 06’ y 24° 11’</b> Latitud
+Norte y los <b>110° 19’ y 110° 25’</b> de Longitud Oeste. El área total de la laguna es de
+aproximadamente 5000 hectáreas. Es una laguna somera, con pendientes suaves
+que se considera son producto de la sedimentación del material transportado por
+los arroyos que drenan hacia esa porción y distribuidos por las corrientes costeras
+que se desplazan de Norte a Sur. Los puntos donde se realizaron las mediciones
+se representan en la figura 1. <p/>
+<img src="../IMAGENES/ATLAS/WhatsApp Image 2025-12-19 at 1.12.52 PM.jpeg" alt="Figura 1: Representación de la Zona de Estudio"/>
+<h2>Metodología</h2>
+
+<p>Las actividades realizadas consistieron en la medición de 10 variables relacionadas
+con la calidad del agua: Temperatura, pH, Potencial de Oxidación-Reducción (<b>ORP</b>),
+Oxígeno Disuelto (<b>OD</b>), Conductividad Eléctrica (<b>EC</b>), Resistividad (<b>RES</b>), Total de
+Solidos Disueltos (<b>TDS</b>), Salinidad, Clorofila, Materia Orgánica Disuelta (<b>CDOM</b>).
+Estas variables fueron medidas en 50 puntos georreferenciados en la laguna. Para
+ello se empleó una sonda <b>AP-5000 S/N:230820259 S/W:5.10</b>. En cada estación se
+tomaron registraron tres mediciones con los cuales se realizó la media con los que
+se confeccionaron las tablas y mapas. Las coordenadas de las estaciones de
+medición se presentan en la Tabla 1 <p/>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Estación</th><th>Lat</th><th>Lon</th>
+      <th>Estación</th><th>Lat</th><th>Lon</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>24.14638</td><td>-110.35249</td><td>26</td><td>24.11507</td><td>-110.39381</td></tr>
+    <tr><td>2</td><td>24.15107</td><td>-110.34211</td><td>27</td><td>24.11009</td><td>-110.40193</td></tr>
+    <tr><td>3</td><td>24.15738</td><td>-110.33661</td><td>28</td><td>24.11566</td><td>-110.40822</td></tr>
+    <tr><td>4</td><td>24.15756</td><td>-110.33041</td><td>29</td><td>24.12140</td><td>-110.41431</td></tr>
+    <tr><td>5</td><td>24.16281</td><td>-110.32493</td><td>30</td><td>24.12695</td><td>-110.40916</td></tr>
+    <tr><td>6</td><td>24.16339</td><td>-110.32718</td><td>31</td><td>24.12225</td><td>-110.39627</td></tr>
+    <tr><td>7</td><td>24.16717</td><td>-110.31996</td><td>32</td><td>24.13310</td><td>-110.38754</td></tr>
+    <tr><td>8</td><td>24.14992</td><td>-110.35807</td><td>33</td><td>24.13300</td><td>-110.39629</td></tr>
+    <tr><td>9</td><td>24.14681</td><td>-110.35686</td><td>34</td><td>24.13431</td><td>-110.39688</td></tr>
+    <tr><td>10</td><td>24.14068</td><td>-110.35591</td><td>35</td><td>24.13571</td><td>-110.40458</td></tr>
+    <tr><td>11</td><td>24.13410</td><td>-110.35541</td><td>36</td><td>24.13237</td><td>-110.41362</td></tr>
+    <tr><td>12</td><td>24.12489</td><td>-110.35725</td><td>37</td><td>24.13353</td><td>-110.41766</td></tr>
+    <tr><td>13</td><td>24.14127</td><td>-110.36410</td><td>38</td><td>24.14493</td><td>-110.41224</td></tr>
+    <tr><td>14</td><td>24.13547</td><td>-110.36659</td><td>39</td><td>24.14725</td><td>-110.40095</td></tr>
+    <tr><td>15</td><td>24.12718</td><td>-110.37002</td><td>40</td><td>24.14259</td><td>-110.40103</td></tr>
+    <tr><td>16</td><td>24.13967</td><td>-110.37149</td><td>41</td><td>24.14521</td><td>-110.38442</td></tr>
+    <tr><td>17</td><td>24.14184</td><td>-110.36288</td><td>42</td><td>24.15001</td><td>-110.38869</td></tr>
+    <tr><td>18</td><td>24.14581</td><td>-110.36962</td><td>43</td><td>24.15551</td><td>-110.38647</td></tr>
+    <tr><td>19</td><td>24.14000</td><td>-110.37408</td><td>44</td><td>24.16069</td><td>-110.39773</td></tr>
+    <tr><td>20</td><td>24.12767</td><td>-110.37968</td><td>45</td><td>24.16470</td><td>-110.40599</td></tr>
+    <tr><td>21</td><td>24.11696</td><td>-110.38342</td><td>46</td><td>24.16083</td><td>-110.41298</td></tr>
+    <tr><td>22</td><td>24.12062</td><td>-110.38183</td><td>47</td><td>24.15665</td><td>-110.42215</td></tr>
+    <tr><td>23</td><td>24.11386</td><td>-110.38084</td><td>48</td><td>24.14978</td><td>-110.42353</td></tr>
+    <tr><td>24</td><td>24.11888</td><td>-110.38467</td><td>49</td><td>24.15384</td><td>-110.42548</td></tr>
+    <tr><td>25</td><td>24.11266</td><td>-110.39091</td><td>50</td><td>24.16971</td><td>-110.42576</td></tr>
+  </tbody>
+</table>
+</section> 
+    
+ <!-- Sección 2024 -->
+    
+    <section id="seccion_2024">
+      <button class="accordion"><h2>2024</h2></button>
+      <div class="panel">
+      <button class="accordion"><h2>MAYO</h2></button>
+        <div class="panel">
+            <p>El día 27 de mayo de 2024 se llevó a cabo el monitoreo de la laguna Ensenada de La Paz,
+localizadas en La Paz, Baja California Sur, México. Lo anterior con propósito de dar
+cumplimiento al programa presentado en el programa del proyecto con código IPN-SIP
+20240475 "Caracterización hidrológica y bacteriológica de la Laguna La Paz, BCS". El
+monitoreo se llevó a cabo desde las 07:36:55 hasta las 12:05:18</p>
+            <div class="subsection" id="seccion_2024-5-temp"><h3>Temperatura</h3>
+              <p>La escala de variación de la temperatura se encuentra entre los 24.3 a los 26.7 oC.
+Las temperaturas más elevadas se encuentran en la porción sur de la ensenada,
+mientras que las más bajas se ubican el margen oeste del mogote. La figura representa la variación espacial de la variable, se maneja una escala de color del
+verde al rojo, representando los valores mínimos a máximos respectivamente.</p>
+              <img src="../IMAGENES/ATLAS/MAPAS MAYO 2023/Temp__oC.jpg" alt="Figura 2: Representación de las variaciones espaciales de la temperatura (oC)
+registradas en el monitoreo del 27 de mayo del 2024"/>
+            </div>       
+            <div class="subsection" id="seccion_2024-5-ph"><h3>Ph</h3>
+              <p>La escala de variación del pH se encuentra entre los 7.16 a los 7.86. Los valores
+más elevados se encuentran en la porción sur de la barrera arenosa del mogote,
+mientras que las más bajas se ubican la salida del canal de la ensenada. La figura
+representa la variación espacial de la variable, se maneja una escala de color del
+verde al rojo, representando los valores mínimos a máximos respectivamente.</p>
+              <img src="../IMAGENES/ATLAS/MAPAS MAYO 2023/pH.jpg" alt="Figura 3: Representación de las variaciones espaciales del pH registradas en el
+monitoreo del 27 de mayo del 2024"/>
+            </div>  
+            <div class="subsection" id="seccion_2024-5-sal"><h3>Salinidad</h3>
+              <p>La escala de variación de la salinidad se encuentra entre los 24.56 a los 30.57 ppt.
+Los valores más elevados se encuentran en la porción este de la ensenada,
+incluyendo el canal de salida. Mientras que las más bajas se ubican al fondo de la
+laguna en todo el margen oeste de esta. La figura representa la variación espacial
+de la variable, se maneja una escala de color del verde al rojo, representando los
+valores mínimos a máximos respectivamente.</p>
+              <img src="../IMAGENES/ATLAS/MAPAS MAYO 2023/SAL_ppt.jpg"  alt="Figura 4: Representación de las variaciones espaciales de la Salinidad (ppt)
+registradas en el monitoreo del 27 de mayo del 2024"/>
+            </div>  
+            <div class="subsection" id="seccion_2024-5-od"><h3>Oxígeno disuelto</h3>
+              <p>La escala de variación del DO se encuentra entre los 7.48 a los 8.30 mg/L. Los
+valores más elevados se encuentran en la porción este de la ensenada, incluyendo
+el canal de salida. Mientras que las más bajas se ubican al fondo de la laguna en
+todo el margen oeste de esta. La figura representa la variación espacial de la
+variable, se maneja una escala de color del verde al rojo, representando los valores
+mínimos a máximos respectivamente.</p>
+              <img src="../IMAGENES/ATLAS/MAPAS MAYO 2023/DO_mg-L.jpg"  alt="Figura 5: Representación de las variaciones espaciales del oxígeno disuelto (mg/L)
+registradas en el monitoreo del 27 de mayo del 2024"/>
+            </div>  
+            <div class="subsection" id="seccion_2024-5-ec"><h3>Conductividad eléctrica</h3>
+              <p>La escala de variación del EC se encuentra entre los 38,63 a los 47,01 µS/cm. Los
+valores más elevados se encuentran a modos de parches irregulares distribuidos
+por toda la ensenada en la porción este de la ensenada, incluyendo el canal de
+salida. Mientras que las más bajas se ubican principalmente al fondo de la laguna.
+La figura representa la variación espacial de la variable, se maneja una escala de
+color del verde al rojo, representando los valores mínimos a máximos
+respectivamente.</p>
+              <img src="../IMAGENES/ATLAS/MAPAS MAYO 2023/EC_µS-cm.jpg" alt="Figura 6: Representación de las variaciones espaciales de la Conductividad
+Eléctrica (EC) (µS/cm) registradas en el monitoreo del 27 de mayo del 2024"/>
+            </div>  
+            <div class="subsection" id="seccion_2024-5-res"><h3>Resistividad</h3>
+              <p>La escala de variación del RES se encuentra entre los 21 a los 25 R.cm. Los valores
+más elevados se encuentran en la porción norte del interior de la ensenada,
+incluyendo el inicio del canal de la ensenada. Mientras que las más bajas se ubican
+al fondo de la laguna en todo el margen sur de esta. La figura 7 representa la
+variación espacial de la variable, se maneja una escala de color del verde al rojo,
+representando los valores mínimos a máximos respectivamente.</p>
+              <img src="../IMAGENES/ATLAS/MAPAS MAYO 2023/RES_Ohms.jpg" alt="Figura 7:Representación de las variaciones espaciales de la Resistividad (RES)
+(R.cm) registradas en el monitoreo del 27 de mayo del 2024"/>
+            </div>  
+            <div class="subsection" id="seccion_2024-5-tds"><h3>Total de solidos disueltos</h3>
+              <p>La escala de variación del TDS se encuentra entre los 25,11 a los 30,56 mg/L. Los
+valores más elevados se encuentran distribuidos a modo de parches irregulares en
+el interior de la laguna incluyendo el canal. Mientras que las más bajas se ubican al
+fondo de esta. La figura representa la variación espacial de la variable, se maneja
+una escala de color del verde al rojo, representando los valores mínimos a máximos
+respectivamente.</p>
+              <img src="../IMAGENES/ATLAS/MAPAS MAYO 2023/TDS_mg-L.jpg" alt="Figura 8:Representación de las variaciones espaciales del Total de Solidos
+Disueltos (TDS) (mg/l) registradas en el monitoreo del 27 de mayo del 2024"/>
+            </div>  
+            <div class="subsection" id="seccion_2024-5-clor"><h3>Clorofila</h3>
+              <p>La escala de variación de la clorofila se encuentra entre los 7.48 a los 62.18 µg/L.
+Los valores más elevados se encuentran en prácticamente toda la ensenada,
+incluyendo el canal de salida. Mientras que las más bajas se ubican al fondo de la
+laguna en todo el margen noroeste. La figura representa la variación espacial de
+la variable, se maneja una escala de color del verde al rojo, representando los
+valores mínimos a máximos respectivamente.</p>
+              <img src="../IMAGENES/ATLAS/MAPAS MAYO 2023/Chlorophyl_µg-L.jpg" alt="Figura 9: Representación de las variaciones espaciales de la Clorofila (µg/L)
+registradas en el monitoreo del 27 de mayo del 2024"/>
+            </div>  
+            <div class="subsection" id="seccion_2024-5-cdom"><h3>Materia orgánica disuelta</h3>
+              <p>La escala de variación del CDOM se encuentra entre los 463.40 a los 627.60 µg/L.
+Los valores más elevados se encuentran solo en una zona de ensenada, incluyendo
+el canal de salida. La figura representa la variación espacial de la variable, se
+maneja una escala de color del verde al rojo, representando los valores mínimos a
+máximos respectivamente.</p>
+              <img src="../IMAGENES/ATLAS/MAPAS MAYO 2023/CDOM_µg-L.jpg" alt="Figura 10: Representación de las variaciones espaciales de la Materia Orgánica
+Disuelta (CDOM) (µg/L) registradas en el monitoreo del 27 de mayo del 2024"/>
+            </div>  
+            <div class="subsection" id="seccion_2024-5-orp"><h3>Potencial redox</h3>
+              <p>La escala de variación del ORP se encuentra entre los 45.7 a los 181.7 mV. Los
+valores más elevados se encuentran en la porción suroeste del interior de la
+ensenada, mientras que las más bajas se ubican la salida del canal de esta. La
+figura representa la variación espacial de la variable, se maneja una escala de
+color del verde al rojo, representando los valores mínimos a máximos
+respectivamente.</p>
+              <img src="../IMAGENES/ATLAS/MAPAS MAYO 2023/ORP_mV.jpg" alt="Figura 11: Representación de las variaciones espaciales del Potencial de OxidaciónReducción (ORP) (mV) registradas en el monitoreo del 27 de mayo del 2024"/>
+            </div>  
+          </div> 
+      <button class="accordion"><h2>JUNIO</h2></button>
+        <div class="panel">
+                  <p> El día 28 de junio de 2024 se llevó a cabo el monitoreo de la laguna Ensenada de La Paz,
+localizadas en La Paz, Baja California Sur, México. Lo anterior con propósito de dar
+cumplimiento al programa presentado en el programa del proyecto con código IPN-SIP
+20240475 "Caracterización hidrológica de la Laguna La Paz, BCS".
+El monitoreo se llevó a cabo desde las 09:03:13 hasta las 15:08:57</p> 
+            <div class="subsection" id="seccion_2024-6-temp"><h3>Temperatura</h3>
+              <p>La escala de variación de la temperatura se encuentra entre los 22.6 a los 26.4 oC.
+Las temperaturas más elevadas se encuentran en la porción sur de la ensenada,
+mientras que las más bajas se ubican el margen oeste del mogote y en canal de
+salida. La figura representa la variación espacial de la variable, se maneja una
+escala de color del verde al rojo, representando los valores mínimos a máximos
+respectivamente.   </p>
+            <img src="../IMAGENES/ATLAS/MAPAS 2024 06/temp.jpg" alt="Figura 12: Representación de las variaciones espaciales de la Clorofila (µg/L)
+registradas en el monitoreo del 30 de agosto del 2024"/>
+            </div>       
+           
+            <div class="subsection" id="seccion_2024-6-ph"><h3>Ph</h3>
+              <p>La escala de variación del pH se encuentra entre los 7.75 a los 7.87. Los valores
+más elevados se encuentran en la porción sur de la barrera arenosa del mogote,
+mientras que las más bajas se ubican la salida del canal de la ensenada. La figura
+representa la variación espacial de la variable, se maneja una escala de color del
+verde al rojo, representando los valores mínimos a máximos respectivamente. </p>
+             <img src="../IMAGENES/ATLAS/MAPAS 2024 06/ph.jpg" alt="Figura 13: Representación de las variaciones espaciales de la Clorofila (µg/L)
+registradas en el monitoreo del 30 de agosto del 2024"/>
+            </div>   
+            <div class="subsection" id="seccion_2024-6-sal"><h3>Salinidad</h3>
+              <p>La escala de variación de la salinidad se encuentra entre los 32.58 a los 36.23 ppt.
+Los valores más elevados se encuentran distribuidos en el canal. Mientras que las
+más bajas se ubican al fondo de la laguna muy similar a la distribución de valores
+de TDS. La figura representa la variación espacial de la variable, se maneja una
+escala de color del verde al rojo, representando los valores mínimos a máximos
+respectivamente.</p>
+            <img src="../IMAGENES/ATLAS/MAPAS 2024 06/sal.jpg" alt="Figura 14: Representación de las variaciones espaciales de la Clorofila (µg/L)
+registradas en el monitoreo del 30 de agosto del 2024"/>
+            </div>   
+            <div class="subsection" id="seccion_2024-6-od"><h3>Oxígeno disuelto</h3>
+              <p>La escala de variación del DO se encuentra entre los 4.01 a los 5.05 mg/L. Los
+valores más elevados se encuentran en la porción oeste y el interior de la ensenada.
+Mientras que las más bajas se ubican incluyendo el canal de salida. La figura representa la variación espacial de la variable, se maneja una escala de color del
+verde al rojo, representando los valores mínimos a máximos respectivamente.</p>
+            <img src="../IMAGENES/ATLAS/MAPAS 2024 06/do.jpg" alt="Figura 15: Representación de las variaciones espaciales de la Clorofila (µg/L)
+registradas en el monitoreo del 30 de agosto del 2024"/>
+            </div>     
+            <div class="subsection" id="seccion_2024-6-ec"><h3>Conductividad eléctrica</h3>
+              <p>La escala de variación del EC se encuentra entre los 49,818 a los 54,748 µS/cm. Los
+valores más elevados se encuentran a modos de parches irregulares distribuidos
+por toda la ensenada en la porción este de la ensenada, incluyendo el canal de
+salida. Mientras que las más bajas se ubican principalmente al fondo de la laguna.
+La figura representa la variación espacial de la variable, se maneja una escala de
+color del verde al rojo, representando los valores mínimos a máximos
+respectivamente. </p>
+                  <img src="../IMAGENES/ATLAS/MAPAS 2024 06/ec.jpg" alt="Figura 16: Representación de las variaciones espaciales de la Clorofila (µg/L)
+registradas en el monitoreo del 30 de agosto del 2024"/>
+            </div>    
+            <div class="subsection" id="seccion_2024-6-res"><h3>Resistividad</h3>
+              <p>La escala de variación del RES se encuentra entre los 18 a los 20 R.cm. Los valores
+más elevados se encuentran en la porción suroeste del interior de la ensenada.
+Mientras que las más bajas se ubican en la mayor parte de la laguna incluyendo el
+canal. La figura representa la variación espacial de la variable, se maneja una
+escala de color del verde al rojo, representando los valores mínimos a máximos
+respectivamente.</p>
+            <img src="../IMAGENES/ATLAS/MAPAS 2024 06/ec.jpg" alt="Figura 17: Representación de las variaciones espaciales de la Clorofila (µg/L)
+registradas en el monitoreo del 30 de agosto del 2024"/>
+            </div>   
+            <div class="subsection" id="seccion_2024-6-tds"><h3>Total de solidos disueltos</h3>
+              <p>La escala de variación del TDS se encuentra entre los 32,381 a los 35,586 mg/L. Los
+valores más elevados se encuentran distribuidos en el canal. Mientras que las más
+bajas se ubican al fondo de la laguna. La figura representa la variación espacial
+de la variable, se maneja una escala de color del verde al rojo, representando los
+valores mínimos a máximos respectivamente. </p>
+            <img src="../IMAGENES/ATLAS/MAPAS 2024 06/tds.jpg" alt="Figura 18: Representación de las variaciones espaciales de la Clorofila (µg/L)
+registradas en el monitoreo del 30 de agosto del 2024"/>
+            </div>   
+            <div class="subsection" id="seccion_2024-6-clor"><h3>Clorofila</h3>
+              <p>La escala de variación de la clorofila se encuentra entre los 30.07 a los 106.00 µg/L.
+Los valores más elevados se encuentran a modod de parches en prácticamente
+toda la ensenada, incluyendo el canal de salida. Mientras que las más bajas se
+ubican al fondo de la laguna y en la unión de la laguna al canal. La figura representa la variación espacial de la variable, se maneja una escala de color del
+verde al rojo, representando los valores mínimos a máximos respectivamente. </p>
+                  <img src="../IMAGENES/ATLAS/MAPAS 2024 06/chl.jpg" alt="Figura 19: Representación de las variaciones espaciales de la Clorofila (µg/L)
+registradas en el monitoreo del 30 de agosto del 2024"/>
+            </div>    
+            <div class="subsection" id="seccion_2024-6-cdom"><h3>Materia orgánica disuelta</h3>
+              <p>La escala de variación del CDOM se encuentra entre los 393.60 a los 711.80 µg/L.
+Los valores más elevados se encuentran en una zona de ensenada, incluyendo el
+canal de salida. La figura representa la variación espacial de la variable, se
+maneja una escala de color del verde al rojo, representando los valores mínimos a
+máximos respectivamente.</p>
+               <img src="../IMAGENES/ATLAS/MAPAS 2024 06/cdom.jpg" alt="Figura 20: Representación de las variaciones espaciales de la Clorofila (µg/L)
+registradas en el monitoreo del 30 de agosto del 2024"/>
+            </div>   
+            <div class="subsection" id="seccion_2024-6-orp"><h3>Potencial redox</h3>
+              <p>La escala de variación del ORP se encuentra entre los 78.3 a los 192.0 mV. Los
+valores más elevados se encuentran en la porción suroeste del interior de la
+ensenada, mientras que las más bajas se ubican la salida del canal de esta. La
+figura representa la variación espacial de la variable, se maneja una escala de
+color del verde al rojo, representando los valores mínimos a máximos
+respectivamente.</p>
+              <img src="../IMAGENES/ATLAS/MAPAS 2024 06/orp.jpg" alt="Figura 21: Representación de las variaciones espaciales de la Clorofila (µg/L)
+registradas en el monitoreo del 30 de agosto del 2024"/>
+            </div>  
+          </div>      
+      <button class="accordion"><h2>JULIO</h2></button>
+        <div class="panel">
+            <p>El día 26 de julio de 2024 se llevó a cabo el monitoreo de la laguna Ensenada de La Paz,
+localizadas en La Paz, Baja California Sur, México. Lo anterior con propósito de dar
+cumplimiento al programa presentado en el programa del proyecto con código IPN-SIP
+20240475 "Caracterización hidrológica y bacteriológica de la Laguna La Paz, BCS".
+El monitoreo se llevó a cabo desde las 07:03:13 hasta las 11:50:57</p>
+            <div class="subsection" id="seccion_2024-7-temp"><h3>Temperatura</h3>
+              <p>La escala de variación de la temperatura se encuentra entre los 26.7 a los 29.1 oC.
+Las temperaturas más elevadas se encuentran en la porción sur de la ensenada,
+mientras que las más bajas se ubican el margen oeste del mogote y en canal de
+salida. La figura representa la variación espacial de la variable, se maneja una
+escala de color del verde al rojo, representando los valores mínimos a máximos
+respectivamente.</p>
+                  <img src="../IMAGENES/ATLAS/MAPAS 2024 07/tem.jpg" alt="Figura 22: Representación de las variaciones espaciales de la Clorofila (µg/L)
+registradas en el monitoreo del 30 de agosto del 2024"/>
+            </div>        
+            <div class="subsection" id="seccion_2024-7-ph"><h3>Ph</h3>
+                           <p>La escala de variación del pH se encuentra entre los 7.65 a los 7.7. Los valores más
+elevados se encuentran en la porción sur de la barrera arenosa del mogote,
+mientras que las más bajas se ubican la salida del canal de la ensenada. La figura
+ representa la variación espacial de la variable, se maneja una escala de color del
+verde al rojo, representando los valores mínimos a máximos respectivamente.</p>
+                  <img src="../IMAGENES/ATLAS/MAPAS 2024 07/ph.jpg" alt="Figura 23: Representación de las variaciones espaciales de la Clorofila (µg/L)
+registradas en el monitoreo del 30 de agosto del 2024"/>
+            </div>   
+                 
+            <div class="subsection" id="seccion_2024-7-od"><h3>Oxígeno disuelto</h3>
+                            <p>La escala de variación del DO se encuentra entre los 5.38 a los 7.87 mg/L. Los
+valores más elevados se encuentran en la porción oeste y el interior de la ensenada.
+Mientras que las más bajas se ubican incluyendo el canal de salida. La figura 
+representa la variación espacial de la variable, se maneja una escala de color del
+verde al rojo, representando los valores mínimos a máximos respectivamente.</p>
+                  <img src="../IMAGENES/ATLAS/MAPAS 2024 07/do.jpg" alt="Figura 24: Representación de las variaciones espaciales de la Clorofila (µg/L)
+registradas en el monitoreo del 30 de agosto del 2024"/>
+            </div>     
+            <div class="subsection" id="seccion_2024-7-ec"><h3>Conductividad eléctrica</h3>
+                            <p>La escala de variación del DO se encuentra entre los 5.38 a los 7.87 mg/L. Los
+valores más elevados se encuentran en la porción oeste y el interior de la ensenada.
+Mientras que las más bajas se ubican incluyendo el canal de salida. La figura 
+representa la variación espacial de la variable, se maneja una escala de color del
+verde al rojo, representando los valores mínimos a máximos respectivamente.</p>
+                  <img src="../IMAGENES/ATLAS/MAPAS 2024 07/ec.jpg" alt="Figura 25: Representación de las variaciones espaciales de la Clorofila (µg/L)
+registradas en el monitoreo del 30 de agosto del 2024"/>
+            </div>    
+            <div class="subsection" id="seccion_2024-7-res"><h3>Resistividad</h3>
+                            <p>La escala de variación del RES se encuentra entre los 17 a los 19.2 R.cm. Los valores
+más elevados se encuentran en la porción suroeste del interior de la ensenada.
+Mientras que las más bajas se ubican en la mayor parte de la laguna incluyendo el
+canal. La figura representa la variación espacial de la variable, se maneja una
+escala de color del verde al rojo, representando los valores mínimos a máximos
+respectivamente.</p>
+                  <img src="../IMAGENES/ATLAS/MAPAS 2024 07/res.jpg" alt="Figura 26: Representación de las variaciones espaciales de la Clorofila (µg/L)
+registradas en el monitoreo del 30 de agosto del 2024"/>
+            </div>     
+            <div class="subsection" id="seccion_2024-7-tds"><h3>Total de solidos disueltos</h3>
+                            <p>La escala de variación del TDS se encuentra entre los 29,820 a los 34,950 mg/L. Los
+valores más elevados se encuentran distribuidos en el canal. Mientras que las más
+bajas se ubican al fondo de la laguna. La figura representa la variación espacial
+de la variable, se maneja una escala de color del verde al rojo, representando los
+valores mínimos a máximos respectivamente.</p>
+                  <img src="../IMAGENES/ATLAS/MAPAS 2024 07/tds.jpg" alt="Figura 27: Representación de las variaciones espaciales de la Clorofila (µg/L)
+registradas en el monitoreo del 30 de agosto del 2024"/>
+            </div>    
+            <div class="subsection" id="seccion_2024-7-clor"><h3>Clorofila</h3>
+                            <p>La escala de variación de la clorofila se encuentra entre los 32 a los 50 µg/L. Los
+valores más elevados se encuentran a modod de parches en prácticamente toda la
+ensenada, incluyendo el canal de salida. Mientras que las más bajas se ubican al
+fondo de la laguna y en la unión de la laguna al canal. La figura representa la
+variación espacial de la variable, se maneja una escala de color del verde al rojo,
+representando los valores mínimos a máximos respectivamente.</p>
+                  <img src="../IMAGENES/ATLAS/MAPAS 2024 07/chl.jpg" alt="Figura 28: Representación de las variaciones espaciales de la Clorofila (µg/L)
+registradas en el monitoreo del 30 de agosto del 2024"/>
+            </div>    
+            <div class="subsection" id="seccion_2024-7-cdom"><h3>Materia orgánica disuelta</h3>
+                            <p>La escala de variación del CDOM se encuentra entre los 413.60 a los 470.80 µg/L.
+Los valores más elevados se encuentran en una zona de ensenada, incluyendo el
+canal de salida. La figura representa la variación espacial de la variable, se
+maneja una escala de color del verde al rojo, representando los valores mínimos a
+máximos respectivamente.</p>
+                  <img src="../IMAGENES/ATLAS/MAPAS 2024 07/cdom.jpg" alt="Figura 29: Representación de las variaciones espaciales de la Clorofila (µg/L)
+registradas en el monitoreo del 30 de agosto del 2024"/>
+            </div>    
+            <div class="subsection" id="seccion_2024-7-orp"><h3>Potencial redox</h3>
+                           <p>La escala de variación del ORP se encuentra entre los 78.3 a los 143.0 mV. Los
+valores más elevados se encuentran en la porción suroeste del interior de la
+ensenada, mientras que las más bajas se ubican la salida del canal de esta. La
+figura representa la variación espacial de la variable, se maneja una escala de
+color del verde al rojo, representando los valores mínimos a máximos
+respectivamente.</p>
+                  <img src="../IMAGENES/ATLAS/MAPAS 2024 07/orp.jpg" alt="Figura 30: Representación de las variaciones espaciales de la Clorofila (µg/L)
+registradas en el monitoreo del 30 de agosto del 2024"/>
+            </div>   
+          </div> 
+      <button class="accordion"><h2>AGOSTO</h2></button>
+        <div class="panel">
+            <p>El día 30 de agosto de 2024 se llevó a cabo el monitoreo de la laguna Ensenada de La Paz,
+localizadas en La Paz, Baja California Sur, México. Lo anterior con propósito de dar
+cumplimiento al programa presentado en el programa del proyecto con código IPN-SIP
+20240475 "Caracterización hidrológica y bacteriológica de la Laguna La Paz, BCS".
+El monitoreo se llevó a cabo desde las 07:34:51 hasta las 12:52:33.</p>
+            <div class="subsection" id="seccion_2024-8-temp"><h3>Temperatura</h3>
+                            <p>La escala de variación de la temperatura se encuentra entre los 27.2 a los 30.6 oC.
+Las temperaturas más elevadas se encuentran en la porción oeste de la ensenada,
+mientras que las más bajas se ubican en canal de salida. La figura representa la
+variación espacial de la variable, se maneja una escala de color del verde al rojo,
+representando los valores mínimos a máximos respectivamente.</p>
+                  <img src="../IMAGENES/ATLAS/MAPAS 2024 08/tem AGO.jpg" alt="Figura 31: Representación de las variaciones espaciales de la Clorofila (µg/L)
+registradas en el monitoreo del 30 de agosto del 2024"/>
+            </div>         
+            <div class="subsection" id="seccion_2024-8-ph"><h3>Ph</h3>
+                           <p>La escala de variación del pH se encuentra entre los 7.22 a los 8.29. Los valores
+más elevados se encuentran en la porción sur de la barrera arenosa del mogote,
+mientras que las más bajas se ubican la salida del canal de la ensenada. La figura
+3 representa la variación espacial de la variable, se maneja una escala de color del
+verde al rojo, representando los valores mínimos a máximos respectivamente.</p>
+                  <img src="../IMAGENES/ATLAS/MAPAS 2024 08/pH AGO.jpg" alt="Figura 32: Representación de las variaciones espaciales de la Clorofila (µg/L)
+registradas en el monitoreo del 30 de agosto del 2024"/>
+            </div>   
+            <div class="subsection" id="seccion_2024-8-sal"><h3>Salinidad</h3>
+                           <p>La escala de variación de la salinidad se encuentra entre los 34.6 a los 42.3 ppt. Los
+valores más elevados se encuentran en la porción sur del interior de la ensenada,
+mientras que las más bajas se ubican la salida del canal de esta. La figura 
+representa la variación espacial de la variable, se maneja una escala de color del
+verde al rojo, representando los valores mínimos a máximos respectivamente.</p>
+                  <img src="../IMAGENES/ATLAS/MAPAS 2024 08/sal AGO.jpg" alt="Figura 33: Representación de las variaciones espaciales de la Clorofila (µg/L)
+registradas en el monitoreo del 30 de agosto del 2024"/>
+            </div>   
+            <div class="subsection" id="seccion_2024-8-od"><h3>Oxígeno disuelto</h3>
+                            <p>La escala de variación del DO se encuentra entre los 6.38 a los 8.45 mg/L. Los
+valores más elevados se encuentran en la porción oeste y el interior de la ensenada.
+Mientras que las más bajas se ubican en la zona sur incluyendo parte del canal de
+salida. La figura representa la variación espacial de la variable, se maneja una
+escala de color del verde al rojo, representando los valores mínimos a máximos
+respectivamente.</p>
+                  <img src="../IMAGENES/ATLAS/MAPAS 2024 08/DO AGO.jpg" alt="Figura 34: Representación de las variaciones espaciales de la Clorofila (µg/L)
+registradas en el monitoreo del 30 de agosto del 2024"/>
+            </div>    
+            <div class="subsection" id="seccion_2024-8-ec"><h3>Conductividad eléctrica</h3>
+                         <p>La escala de variación del EC se encuentra entre los 59,100 a los 69,200 µS/cm. Los
+valores más elevados se encuentran en la zona sur de la ensenada. Mientras que
+las más bajas se ubican principalmente en el canal de salida. La figura representa
+la variación espacial de la variable, se maneja una escala de color del verde al rojo,
+representando los valores mínimos a máximos respectivamente.</p>
+                  <img src="../IMAGENES/ATLAS/MAPAS 2024 08/EC AGO.jpg" alt="Figura 35: Representación de las variaciones espaciales de la Clorofila (µg/L)
+registradas en el monitoreo del 30 de agosto del 2024"/>
+            </div>     
+            <div class="subsection" id="seccion_2024-8-res"><h3>Resistividad</h3>
+                           <p>La escala de variación del RES se encuentra entre los 13 a los 15.7 R.cm. Los valores
+más elevados se encuentran en el canal de salida de la laguna. Mientras que las
+más bajas se ubican en la mayor parte de la laguna. La figura representa la
+variación espacial de la variable, se maneja una escala de color del verde al rojo,
+representando los valores mínimos a máximos respectivamente.</p>
+                  <img src="../IMAGENES/ATLAS/MAPAS 2024 08/RES AGO.jpg" alt="Figura 36: Representación de las variaciones espaciales de la Clorofila (µg/L)
+registradas en el monitoreo del 30 de agosto del 2024"/>
+            </div>    
+            <div class="subsection" id="seccion_2024-8-tds"><h3>Total de solidos disueltos</h3>
+                        <p>La escala de variación del TDS se encuentra entre los 38,400 a los 44,900 mg/L. Los
+valores más bajos se encuentran distribuidos en el canal. Mientras que las más
+elevados se ubican al fondo de la laguna. La figura representa la variación espacial
+de la variable, se maneja una escala de color del verde al rojo, representando los
+valores mínimos a máximos respectivamente.</p>
+                  <img src="../IMAGENES/ATLAS/MAPAS 2024 08/tds AGO.jpg" alt="Figura 37: Representación de las variaciones espaciales de la Clorofila (µg/L)
+registradas en el monitoreo del 30 de agosto del 2024"/>
+            </div>    
+            <div class="subsection" id="seccion_2024-8-clor"><h3>Clorofila</h3>
+                            <p>La escala de variación de la clorofila se encuentra entre los 51 a los 76 µg/L. Los
+valores más elevados se encuentran a modo de parches en prácticamente toda la
+ensenada. Mientras que las más bajas se ubican en la unión de la laguna al canal.
+La figura representa la variación espacial de la variable, se maneja una escala
+de color del verde al rojo, representando los valores mínimos a máximos
+respectivamente.</p>
+                  <img src="../IMAGENES/ATLAS/MAPAS 2024 08/chlo AGO.jpg" alt="Figura 38: Representación de las variaciones espaciales del Nitrato (NO3) (µg/L)
+registradas en el monitoreo del 30 de agosto del 2024"/>
+            </div>   
+            <div class="subsection" id="seccion_2024-8-cdom"><h3>Materia orgánica disuelta</h3>
+                           <p>La escala de variación del CDOM se encuentra entre los 413.60 a los 470.80 µg/L.
+Los valores más elevados se encuentran en una zona de ensenada, incluyendo el
+canal de salida. La figura representa la variación espacial de la variable, se
+maneja una escala de color del verde al rojo, representando los valores mínimos a
+máximos respectivamente.</p>
+                  <img src="../IMAGENES/ATLAS/MAPAS 2024 08/cdom AGO.jpg" alt="Figura 39: Representación de las variaciones espaciales de la Materia Orgánica
+Disuelta (CDOM) (µg/L) registradas en el monitoreo del 30 de agosto del 2024"/>
+            </div>   
+        </div> 
+      <button class="accordion"><h2>SEPTIEMBRE</h2></button>
+        <div class="panel">
+            <p>El día 25 de septiembre de 2024 se llevó a cabo el monitoreo de la laguna Ensenada de La
+Paz, localizadas en La Paz, Baja California Sur, México. Lo anterior con propósito de dar
+cumplimiento al programa presentado en el programa del proyecto con código IPN-SIP
+20240475 "Caracterización hidrológica y bacteriológica de la Laguna La Paz, BCS".
+El monitoreo se llevó a cabo desde las 08:51:53 hasta las 12:34:40.</p>
+            <div class="subsection" id="seccion_2024-9-temp"><h3>Temperatura</h3>
+                           <p>La escala de variación de la temperatura se encuentra entre los 25.6 a los 27.2 oC.
+Las temperaturas más elevadas se encuentran en la porción sur y oeste de la
+ensenada, mientras que las más bajas se ubican en canal de salida y la porción
+norte de la ensenada. La figura representa la variación espacial de la variable, se
+maneja una escala de color del verde al rojo, representando los valores mínimos a
+máximos respectivamente.</p>
+                  <img src="../IMAGENES/ATLAS/MAPAS 2024 09/temp.jpg" alt="Figura 40: "/>
+            </div>         
+            <div class="subsection" id="seccion_2024-9-ph"><h3>Ph</h3>
+                            <p>La escala de variación del pH se encuentra entre los 7.31 a los 8.49. Los valores
+más elevados se encuentran en la porción sur de la laguna, mientras que las más
+bajas se ubican la salida del canal de la ensenada. La figura representa la
+variación espacial de la variable, se maneja una escala de color del verde al rojo,
+representando los valores mínimos a máximos respectivamente.</p>
+                  <img src="../IMAGENES/ATLAS/MAPAS 2024 09/ph.jpg" alt="Figura 41:"/>
+            </div>    
+            <div class="subsection" id="seccion_2024-9-sal"><h3>Salinidad</h3>
+                            <p>La escala de variación de la salinidad se encuentra entre los 36.8 a los 41.9 ppt. Los
+valores más elevados se encuentran en la salida del canal de la laguna, mientras
+que los valores más bajos se encuentran en el interior de la ensenada. La figura
+representa la variación espacial de la variable, se maneja una escala de color del
+verde al rojo, representando los valores mínimos a máximos respectivamente.</p>
+                  <img src="../IMAGENES/ATLAS/MAPAS 2024 09/sal.jpg" alt="Figura 42:"/>
+            </div>    
+            <div class="subsection" id="seccion_2024-9-od"><h3>Oxígeno disuelto</h3>
+                           <p>La escala de variación del DO se encuentra entre los 6.88 a los 8.69 mg/L. Los
+valores más elevados se encuentran en la porción central del interior de la
+ensenada. Mientras que las más bajas se ubican en el canal de salida. La figura
+representa la variación espacial de la variable, se maneja una escala de color del
+verde al rojo, representando los valores mínimos a máximos respectivamente</p>
+                  <img src="../IMAGENES/ATLAS/MAPAS 2024 09/do.jpg" alt="Figura 43:"/>
+            </div>     
+            <div class="subsection" id="seccion_2024-9-ec"><h3>Conductividad eléctrica</h3>
+                            <p>La escala de variación del EC se encuentra entre los 68,545 a los 74,846 µS/cm. Los
+valores bajos se encuentran en la zona sur de la ensenada. Mientras que las más
+elevados se ubican principalmente en el canal de salida. La figura representa la
+variación espacial de la variable, se maneja una escala de color del verde al rojo,
+representando los valores mínimos a máximos respectivamente</p>
+                  <img src="../IMAGENES/ATLAS/MAPAS 2024 09/ec.jpg" alt="Figura 44:"/>
+            </div>     
+            <div class="subsection" id="seccion_2024-9-res"><h3>Resistividad</h3>
+                            <p>La escala de variación del RES se encuentra entre los 12 a los 14 R.cm. Los valores
+más elevados se encuentran en el interior de la laguna. Mientras que las más bajas
+se ubican en la porción mas alejada del canal de salida. La figura representa la
+variación espacial de la variable, se maneja una escala de color del verde al rojo,
+representando los valores mínimos a máximos respectivamente.</p>
+                  <img src="../IMAGENES/ATLAS/MAPAS 2024 09/res.jpg" alt="Figura 45:"/>
+            </div>    
+            <div class="subsection" id="seccion_2024-9-tds"><h3>Total de solidos disueltos</h3>
+                           <p>La escala de variación del TDS se encuentra entre los 44,554 a los 48,649 mg/L. Los
+valores más elevados se encuentran distribuidos en el canal. Mientras que los bajos
+se ubican al fondo de la laguna. La figura representa la variación espacial de la
+variable, se maneja una escala de color del verde al rojo, representando los valores
+mínimos a máximos respectivamente.</p>
+                  <img src="../IMAGENES/ATLAS/MAPAS 2024 09/tds.jpg" alt="Figura 46:"/>
+            </div>    
+            <div class="subsection" id="seccion_2024-9-clor"><h3>Clorofila</h3>
+                           <p>La escala de variación de la clorofila se encuentra entre los 39 a los 65 µg/L. Los
+valores más elevados se encuentran en el borde central y sur de prácticamente toda
+la ensenada. Mientras que las más bajas se ubican a modo de tres parches en la
+ensenada. La figura representa la variación espacial de la variable, se maneja
+una escala de color del verde al rojo, representando los valores mínimos a máximos
+respectivamente.</p>
+                  <img src="../IMAGENES/ATLAS/MAPAS 2024 09/clo.jpg" alt="Figura 47:"/>
+            </div>    
+            <div class="subsection" id="seccion_2024-9-cdom"><h3>Materia orgánica disuelta</h3>
+                            <p>La escala de variación del CDOM se encuentra entre los 435.60 a los 647.80 µg/L.
+Los valores más elevados se encuentran en una zona de ensenada, incluyendo el
+canal de salida. La figura representa la variación espacial de la variable, se
+maneja una escala de color del verde al rojo, representando los valores mínimos a
+máximos respectivamente.</p>
+                  <img src="../IMAGENES/ATLAS/MAPAS 2024 09/cdom.jpg" alt="Figura 48:"/>
+            </div>   
+   </div> 
+      <button class="accordion"><h2>OCTUBRE</h2></button>
+        <div class="panel">
+            Entre los días 30 y 31 de octubre de 2024 se llevó a cabo el monitoreo de la laguna
+Ensenada de La Paz, localizadas en La Paz, Baja California Sur, México. Lo anterior con
+propósito de dar cumplimiento al programa presentado en el programa del proyecto con
+código IPN-SIP 20240475 "Caracterización hidrológica y bacteriológica de la Laguna
+La Paz, BCS". El monitoreo se llevó a cabo desde las 08:51:53 hasta las 12:34:40.
+            <div class="subsection" id="seccion_2024-10-temp"><h3>Temperatura</h3>
+                            <p>La escala de variación de la temperatura se encuentra entre los 26.3 a los 27.6 oC.
+Las temperaturas más elevadas se encuentran en la porción sur de la ensenada y
+en canal de salida, mientras que las más bajas se ubican y la porción norte de la
+ensenada. La figura representa la variación espacial de la variable, se maneja una
+escala de color del verde al rojo, representando los valores mínimos a máximos
+respectivamente.</p>
+                  <img src="../IMAGENES/ATLAS/MAPAS 2024 10/TEM.jpg" alt="Figura 49:"/>
+            </div>         
+            <div class="subsection" id="seccion_2024-10-ph"><h3>Ph</h3>
+                          <p>La escala de variación del pH se encuentra entre los 7.53 a los 8.35. Los valores
+más elevados se encuentran en la porción sur de la laguna, mientras que las más
+bajas se ubican la salida del canal de la ensenada. La figura representa la
+variación espacial de la variable, se maneja una escala de color del verde al rojo,
+representando los valores mínimos a máximos respectivamente.</p>
+                  <img src="../IMAGENES/ATLAS/MAPAS 2024 10/pH.jpg" alt="Figura 50:"/>
+            </div>    
+            <div class="subsection" id="seccion_2024-10-sal"><h3>Salinidad</h3>
+                           <p>La escala de variación de la salinidad se encuentra entre los 32.8 a los 36.9 ppt. Los
+valores más elevados se encuentran en la salida del canal de la laguna, mientras
+que los valores más bajos se encuentran en el interior de la ensenada. La figura representa la variación espacial de la variable, se maneja una escala de color del
+verde al rojo, representando los valores mínimos a máximos respectivamente.</p>
+                  <img src="../IMAGENES/ATLAS/MAPAS 2024 10/SAL.jpg" alt="Figura 51:"/>
+            </div>    
+            <div class="subsection" id="seccion_2024-10-od"><h3>Oxígeno disuelto</h3>
+                           <p>La escala de variación del DO se encuentra entre los 6.88 a los 9.05 mg/L. Los
+valores más elevados se encuentran en la porción central del interior de la ensenada
+y canal de navegación. Mientras que las más bajas se ubican en la porción oeste
+de la ensenada. La figura representa la variación espacial de la variable, se
+maneja una escala de color del verde al rojo, representando los valores mínimos a
+máximos respectivamente.</p>
+                  <img src="../IMAGENES/ATLAS/MAPAS 2024 10/DO.jpg" alt="Figura 52:"/>
+            </div>    
+            <div class="subsection" id="seccion_2024-10-ec"><h3>Conductividad eléctrica</h3>
+                          <p>La escala de variación del EC se encuentra entre los 50,177 a los 54,423 µS/cm. Los
+valores bajos se encuentran en la zona suroeste de la ensenada. Mientras que las
+más elevados se ubican principalmente en el canal de salida. La figura representa
+la variación espacial de la variable, se maneja una escala de color del verde al rojo,
+representando los valores mínimos a máximos resp</p>
+                  <img src="../IMAGENES/ATLAS/MAPAS 2024 10/EC.jpg" alt="Figura 53: Representación de las variaciones espaciales del Total de Solidos
+Disueltos (TDS) (mg/l) registradas en el monitoreo del 30-31 de octubre del 2024"/>
+            </div>    
+            <div class="subsection" id="seccion_2024-10-res"><h3>Resistividad</h3>
+                            <p>La escala de variación del RES se encuentra entre los 17 a los 19 R.cm. Los valores
+más elevados se encuentran en el canal de navegación. Mientras que las más bajas
+se ubican en la porción interior del mogote. La figura representa la variación
+espacial de la variable, se maneja una escala de color del verde al rojo,
+representando los valores mínimos a máximos respectivamente.</p>
+                  <img src="../IMAGENES/ATLAS/MAPAS 2024 10/RES.jpg" alt="Figura 54: "/>
+            </div>    
+            <div class="subsection" id="seccion_2024-10-tds"><h3>Total de solidos disueltos</h3>
+                            <p>La escala de variación del RES se encuentra entre los 17 a los 19 R.cm. Los valores
+más elevados se encuentran en el canal de navegación. Mientras que las más bajas
+se ubican en la porción interior del mogote. La figura representa la variación
+espacial de la variable, se maneja una escala de color del verde al rojo,
+representando los valores mínimos a máximos respectivamente.</p>
+                  <img src="../IMAGENES/ATLAS/MAPAS 2024 10/TDS.jpg" alt="Figura 55: Representación de las variaciones espaciales del Total de Solidos
+Disueltos (TDS) (mg/l) registradas en el monitoreo del 30-31 de octubre del 2024."/>
+            </div>   
+            <div class="subsection" id="seccion_2024-10-clor"><h3>Clorofila</h3>
+                           <p>La escala de variación de la clorofila se encuentra entre los 41 a los 96 µg/L. Los
+valores más elevados se encuentran en dos zonas de la laguna, en el extremo del
+CICIMAR y al sur del islote central de la ensenada. Mientras que las más bajas se
+ubican en casi toda la ensenada. La figura representa la variación espacial de la
+variable, se maneja una escala de color del verde al rojo, representando los valores
+mínimos a máximos respectivamente.</p>
+                  <img src="../IMAGENES/ATLAS/MAPAS 2024 10/CLO.jpg" alt="Figura 56: Representación de las variaciones espaciales de la Clorofila (µg/L)
+registradas en el monitoreo del 30-31 de octubre del 2024."/>
+            </div>   
+            <div class="subsection" id="seccion_2024-10-cdom"><h3>Materia orgánica disuelta</h3>
+                            <p>La escala de variación del CDOM se encuentra entre los 191.49 a los 581.80 µg/L.
+Los valores más elevados se encuentran en toda la extensión de la ensenada,
+incluyendo el canal de salida mientras que el más bajo se encuentran frente al
+CIBNOR. La figura representa la variación espacial de la variable, se maneja una
+escala de color del verde al rojo, representando los valores mínimos a máximos
+respectivamente.</p>
+                  <img src="../IMAGENES/ATLAS/MAPAS 2024 10/CDOM.jpg" alt="Figura 56: Representación de las variaciones espaciales de la Materia Orgánica
+Disuelta (CDOM) (µg/L) registradas en el monitoreo del 30-31 de octubre del 2024."/>
+            </div>    
+            <div class="subsection" id="seccion_2024-10-orp"><h3>Potencial redox</h3>
+                            <p>
+                  
+                  </p>
+                  <img src="../IMAGENES/ATLAS/MAPAS 2024 10/ORP.jpg" alt="Figura 57:"/>
+            </div>    
+          </div> 
+      <button class="accordion"><h2>NOVIEMBRE</h2></button>
+        <div class="panel">
+            <p>El día 27 de noviembre de 2024 se llevó a cabo el monitoreo de la laguna Ensenada
+de La Paz, localizadas en La Paz, Baja California Sur, México. Lo anterior con propósito de
+dar cumplimiento al programa presentado en el programa del proyecto con código IPN-SIP
+20240475 "Caracterización hidrológica y bacteriológica de la Laguna La Paz, BCS".
+El monitoreo se llevó a cabo desde las 08:51:53 hasta las 12:34:40.</p>
+            <div class="subsection" id="seccion_2024-11-temp"><h3>Temperatura</h3>
+                                          <p>La escala de variación de la temperatura se encuentra entre los 20.8 a los 22.6 oC.
+Las temperaturas más elevadas se encuentran en la porción central de la ensenada
+y en canal de salida, mientras que las más bajas se ubican y la porción norte y sur
+de la ensenada. La figura representa la variación espacial de la variable, se
+maneja una escala de color del verde al rojo, representando los valores mínimos a
+máximos respectivamente</p>
+                  <img src="../IMAGENES/ATLAS/MAPAS 2024 11/temperatura.jpg" alt="Figura 58: Representación de las variaciones espaciales de la temperatura (oC)
+registradas en el monitoreo del 27 de noviembre del 2024"/>
+            </div>          
+            <div class="subsection" id="seccion_2024-11-ph"><h3>Ph</h3>
+                                         <p>La escala de variación del pH se encuentra entre los 7.4 a los 8.4. Los valores más
+elevados se encuentran en la porción oeste y en el canal de la ensenada. La figura
+representa la variación espacial de la variable, se maneja una escala de color del
+verde al rojo, representando los valores mínimos a máximos respectivamente.</p>
+                  <img src="../IMAGENES/ATLAS/MAPAS 2024 11/pH.jpg" alt="Figura 59: Representación de las variaciones espaciales del pH registradas en el
+monitoreo del 27 de noviembre del 2024."/>
+            </div>     
+            <div class="subsection" id="seccion_2024-11-sal"><h3>Salinidad</h3>
+                                         <p>La escala de variación de la salinidad se encuentra entre los 34.6 a los 40.1 ppt. Los
+valores más elevados se encuentran al sur de la laguna, mientras que los valores
+más bajos se encuentran en el canal de la ensenada. La figura 4 representa la
+variación espacial de la variable, se maneja una escala de color del verde al rojo,
+representando los valores mínimos a máximos respectivamente.</p>
+                  <img src="../IMAGENES/ATLAS/MAPAS 2024 11/sal.jpg" alt="Figura 60:  Representación de las variaciones espaciales de la salinidad registradas
+en el monitoreo del 27 de noviembre del 2024."/>
+            </div>     
+            <div class="subsection" id="seccion_2024-11-od"><h3>Oxígeno disuelto</h3>
+                                          <p>La escala de variación del DO se encuentra entre los 7.26 a los 8.01 mg/L. Los
+valores más elevados se encuentran en la porción norte del interior de la ensenada,
+cercanos a la barra del mogote. Mientras que las más bajas se ubican en la porción
+oeste y sur de la ensenada. La figura representa la variación espacial de la
+variable, se maneja una escala de color del verde al rojo, representando los valores
+mínimos a máximos respectivamente.</p>
+                  <img src="../IMAGENES/ATLAS/MAPAS 2024 11/do.jpg" alt="Figura 61: Representación de las variaciones espaciales del oxígeno disuelto (mg/L)
+registradas en el monitoreo del 27 de noviembre del 2024."/>
+            </div>      
+            <div class="subsection" id="seccion_2024-11-ec"><h3>Conductividad eléctrica</h3>
+                                         <p>La escala de variación del EC se encuentra entre los 58,666 a los 65,535 µS/cm. Los
+valores bajos se encuentran en la zona suroeste de la ensenada. Mientras que las
+más elevados se ubican principalmente en el canal de salida. La figura representa
+la variación espacial de la variable, se maneja una escala de color del verde al rojo,
+representando los valores mínimos a máximos respectivamente.</p>
+                  <img src="../IMAGENES/ATLAS/MAPAS 2024 11/ec.jpg" alt="Figura 62: Representación de las variaciones espaciales de la Conductividad
+Eléctrica (EC) (µS/cm) registradas en el monitoreo del 27 de noviembre del 2024."/>
+            </div>    
+            <div class="subsection" id="seccion_2024-11-res"><h3>Resistividad</h3>
+                                          <p>La escala de variación del RES se encuentra entre los 16 a los 17 R.cm. Los valores
+más elevados se encuentran en el canal de navegación y en el norte de la laguna.
+Mientras que las más bajas se ubican en la porción sur de la ensenada. La figura 7
+representa la variación espacial de la variable, se maneja una escala de color del
+verde al rojo, representando los valores mínimos a máximos respectivamente.</p>
+                  <img src="../IMAGENES/ATLAS/MAPAS 2024 11/res.jpg" alt="Figura 63:  Representación de las variaciones espaciales de la Resistividad (RES)
+(R.cm) registradas en el monitoreo del 27 de noviembre del 2024."/>
+            </div>    
+            <div class="subsection" id="seccion_2024-11-tds"><h3>Total de solidos disueltos</h3>
+                                          <p>La escala de variación del TDS se encuentra entre los 38,132 a los 42,152 mg/L. Los
+valores más elevados se encuentran distribuidos al fondo de la laguna. Mientras
+que los bajos se ubican en el canal. La figura representa la variación espacial de
+la variable, se maneja una escala de color del verde al rojo, representando los
+valores mínimos a máximos respectivamente.</p>
+                  <img src="../IMAGENES/ATLAS/MAPAS 2024 11/tds.jpg" alt="Figura 64: Representación de las variaciones espaciales del Total de Solidos
+Disueltos (TDS) (mg/l) registradas en el monitoreo del 27 de noviembre del 2024."/>
+            </div>    
+            <div class="subsection" id="seccion_2024-11-clor"><h3>Clorofila</h3>
+                                         <p>La escala de variación de la clorofila se encuentra entre los 38 a los 98 µg/L. Los
+valores más elevados se encuentran en dos zonas de la laguna, en el extremo del
+CICIMAR y al oeste de la ensenada. Mientras que las más bajas se ubican a modo
+de manchas en casi toda la ensenada. La figura representa la variación espacial
+de la variable, se maneja una escala de color del verde al rojo, representando los
+valores mínimos a máximos respectivamente.</p>
+                  <img src="../IMAGENES/ATLAS/MAPAS 2024 11/cloro.jpg" alt="Figura 65: Representación de las variaciones espaciales de la Clorofila (µg/L)
+registradas en el monitoreo del 27 de noviembre del 2024."/>
+            </div>    
+            <div class="subsection" id="seccion_2024-11-cdom"><h3>Materia orgánica disuelta</h3>
+                                       <p>La escala de variación del CDOM se encuentra entre los 304.7 a los 558.80 µg/L. Los
+valores más elevados se encuentran en toda la extensión de la ensenada,
+incluyendo el canal de salida mientras que el más bajo se encuentran frente al
+CIBNOR. La figura representa la variación espacial de la variable, se maneja una
+escala de color del verde al rojo, representando los valores mínimos a máximos
+respectivamente.</p>
+                  <img src="../IMAGENES/ATLAS/MAPAS 2024 11/cdom.jpg" alt="Figura 66: Representación de las variaciones espaciales de la Materia Orgánica
+Disuelta (CDOM) (µg/L) registradas en el monitoreo del 27 de noviembre del 2024."/>
+            </div>      
+            <div class="subsection" id="seccion_2024-11-orp"><h3>Potencial redox</h3>
+                                          <p>La escala de variación del ORP se encuentra entre los -75 a los -38 mV. Los valores
+más elevados se encuentran en toda la extensión de la ensenada, incluyendo el
+canal de salida mientras que el más bajo se encuentran frente al CICIMAR. La figura representa la variación espacial de la variable, se maneja una escala de color del
+verde al rojo, representando los valores mínimos a máximos respectivamente.</p>
+                  <img src="../IMAGENES/ATLAS/MAPAS 2024 11/ORP.jpg" alt="Figura 67: Representación de las variaciones espaciales de la Potencial redox
+(ORP) (mV) registradas en el monitoreo del 27 de noviembre del 2024."/>
+            </div>    
+          </div> 
+     </section>
+    
+    <!-- Sección 2025 -->
+    
+    <section id="seccion_2025">
+    <button class="accordion"><h2>2025</h2></button>
+      <div class="panel">
+      <button class="accordion"><h2>FEBRERO</h2></button>
+        <div class="panel">
+            <p>El día 07 de febrero de 2025 se llevó a cabo el monitoreo de la laguna Ensenada
+de La Paz, localizadas en La Paz, Baja California Sur, México. Lo anterior con propósito de
+dar cumplimiento al programa presentado en el programa del proyecto con código IPN-SIP
+20240475 "Caracterización hidrológica y bacteriológica de la Laguna La Paz, BCS".
+El monitoreo se llevó a cabo desde las 07:46:03 hasta las 11:13:00.</p>
+            <div class="subsection" id="seccion_2025-2-temp"><h3>Temperatura</h3>
+              <p>La escala de variación de la temperatura se encuentra entre los 18 a los 19.57 oC.
+Las temperaturas más elevadas se encuentran en canal de salida, mientras que las
+más bajas se ubican y la porción norte de la ensenada. La figura representa la
+variación espacial de la variable, se maneja una escala de color del verde al rojo,
+representando los valores mínimos a máximos respectivamente.</p>
+              <img src="../IMAGENES/ATLAS/MAPAS 2025 02/tem.jpg" alt=""/>
+            </div>       
+            <div class="subsection" id="seccion_2025-3-ph"><h3>Ph</h3>
+              <p>La escala de variación del pH se encuentra entre los 8.19 a los 8.26. Los valores
+más elevados se encuentran en el canal de la ensenada. La figura representa la
+variación espacial de la variable, se maneja una escala de color del verde al rojo,
+representando los valores mínimos a máximos respectivamente.</p>
+              <img src="../IMAGENES/ATLAS/MAPAS 2025 02/pH.jpg" alt=""/>
+            </div>  
+            <div class="subsection" id="seccion_2025-3-sal"><h3>Salinidad</h3>
+              <p>La escala de variación de la salinidad se encuentra entre los 34.9 a los 37.23 ppt.
+Los valores más elevados se encuentran al sur de la laguna, mientras que los
+valores más bajos se encuentran en el canal de la ensenada. La figura representa
+la variación espacial de la variable, se maneja una escala de color del verde al rojo,
+representando los valores mínimos a máximos respectivamente.</p>
+              <img src="../IMAGENES/ATLAS/MAPAS 2025 02/sal.jpg" alt=""/>
+            </div>  
+            <div class="subsection" id="seccion_2025-3-od"><h3>Oxígeno disuelto</h3>
+              <p>La escala de variación del DO se encuentra entre los 7.84 a los 8.51 mg/L. Los
+valores más elevados se encuentran en la porción norte del interior de la ensenada,
+cercanos a la barra del mogote y en el canal de navegación. Mientras que las más
+bajas se ubican en la porción oeste y sur de la ensenada. La figura representa la
+variación espacial de la variable, se maneja una escala de color del verde al rojo,
+representando los valores mínimos a máximos respectivamente.</p>
+              <img src="../IMAGENES/ATLAS/MAPAS 2025 02/do.jpg" alt=""/>
+            </div> 
+            <div class="subsection" id="seccion_2025-2-ec"><h3>Conductividad eléctrica</h3>
+              <p>La escala de variación del EC se encuentra entre los 34,263 a los 55,946 µS/cm. Los
+valores elevados se encuentran en la zona suroeste de la ensenada. Mientras que
+las más bajos se ubican principalmente en el canal de salida. La figura representa
+la variación espacial de la variable, se maneja una escala de color del verde al rojo,
+representando los valores mínimos a máximos respectivamente.</p>
+              <img src="../IMAGENES/ATLAS/MAPAS 2025 02/ec.jpg" alt=""/>
+            </div>  
+            <div class="subsection" id="seccion_2025-2-res"><h3>Resistividad</h3>
+              <p>La escala de variación del RES se encuentra entre los 20 a los 25 R.cm. Los valores
+más elevados se encuentran en el canal de navegación y en el norte de la laguna.
+Mientras que las más bajas se ubican en la porción sur de la ensenada. La figura representa la variación espacial de la variable, se maneja una escala de color del
+verde al rojo, representando los valores mínimos a máximos respectivamente</p>
+              <img src="../IMAGENES/ATLAS/MAPAS 2025 02/res.jpg" alt=""/>
+            </div>  
+            <div class="subsection" id="seccion_2025-2-tds"><h3>Total de solidos disueltos</h3>
+              <p>La escala de variación del TDS se encuentra entre los 22,271 a los 36,420 mg/L. Los
+valores más elevados se encuentran distribuidos al fondo de la laguna. Mientras
+que los bajos se ubican en el canal. La figura representa la variación espacial de
+la variable, se maneja una escala de color del verde al rojo, representando los
+valores mínimos a máximos respectivamente.</p>
+              <img src="../IMAGENES/ATLAS/MAPAS 2025 02/tds.jpg" alt=""/>
+            </div>   
+            <div class="subsection" id="seccion_2025-2-clor"><h3>Clorofila</h3>
+              <p>La escala de variación de la clorofila se encuentra entre los 32 a los 63 µg/L. Los
+valores más elevados se encuentran en tres zonas de la laguna estas son el centro
+del canal, al sur de la ensenada y al oeste. Mientras que las más bajas se ubican
+en el centro de casi toda la ensenada. La figura representa la variación espacial
+de la variable, se maneja una escala de color del verde al rojo, representando los
+valores mínimos a máximos respectivamente.</p>
+              <img src="../IMAGENES/ATLAS/MAPAS 2025 02/clorofila.jpg" alt=""/>
+            </div>   
+            <div class="subsection" id="seccion_2025-2-cdom"><h3>Materia orgánica disuelta</h3>
+              <p>La escala de variación del CDOM se encuentra entre los 359.7 a los 567 µg/L. Los
+valores más elevados se encuentran en toda la extensión de la ensenada,
+incluyendo el canal de salida mientras que el más bajo se encuentran frente al
+CIBNOR y en porciones delimitadas dispersas en la ensenada. La figura
+representa la variación espacial de la variable, se maneja una escala de color del
+verde al rojo, representando los valores mínimos a máximos respectivamente.</p>
+              <img src="../IMAGENES/ATLAS/MAPAS 2025 02/cdom.jpg" alt=""/>
+            </div> 
+            <div class="subsection" id="seccion_2025-2-orp"><h3>Potencial redox</h3>
+              <p>La escala de variación del ORP se encuentra entre los -54 a los -17 mV. Los valores
+más elevados se encuentran en toda la extensión de la ensenada, sin incluir el canal
+de salida mientras que el más bajo se encuentran frente al CICIMAR y el canal. La
+figura representa la variación espacial de la variable, se maneja una escala de
+color del verde al rojo, representando los valores mínimos a máximos
+respectivamente.</p>
+              <img src="../IMAGENES/ATLAS/MAPAS 2025 02/orp.jpg" alt=""/>
+            </div>   
+          </div> 
+      <button class="accordion"><h2>MARZO</h2></button>
+        <div class="panel">
+            <p>El día 07 de marzo de 2025 se llevó a cabo el monitoreo de la laguna Ensenada de
+La Paz, localizadas en La Paz, Baja California Sur, México. Lo anterior con propósito de dar
+cumplimiento al programa presentado en el programa del proyecto con código IPN-SIP
+20240475 "Caracterización hidrológica y bacteriológica de la Laguna La Paz, BCS".
+El monitoreo se llevó a cabo desde las 07: 31:31 hasta las 12: 03:20.</p>
+            <div class="subsection" id="seccion_2025-3-temp"><h3>Temperatura</h3>
+              <p>La escala de variación de la temperatura se encuentra entre los 19 a los 20.87 oC.
+Las temperaturas más elevadas se encuentran en canal de salida y en la zona sur
+de la ensenada que coincidentemente se encontraba expuesta en su mayoría por
+la marea baja, mientras que las más bajas se ubican y la porción norte de la
+ensenada. La figura representa la variación espacial de la variable, se maneja una
+escala de color del verde al rojo, representando los valores mínimos a máximos
+respectivamente.</p>
+              <img src="../IMAGENES/ATLAS/MAPAS 2025 03/tem.jpg" alt=""/>
+            </div>       
+            <div class="subsection" id="seccion_2025-3-ph"><h3>Ph</h3>
+              <p>La escala de variación del pH se encuentra entre los 8.14 a los 8.26. Los valores
+más elevados se encuentran en la porción sur de la ensenada, cercanos a la
+mancha urbana de la ciudad de la paz, mientras que los valores bajos se ubican en
+el canal de la ensenada. La figura representa la variación espacial de la variable,
+se maneja una escala de color del verde al rojo, representando los valores mínimos
+a máximos respectivamente.</p>
+              <img src="../IMAGENES/ATLAS/MAPAS 2025 03/pH.jpg" alt=""/>
+            </div>  
+            <div class="subsection" id="seccion_2025-3-sal"><h3>Salinidad</h3>
+              <p>La escala de variación de la salinidad se encuentra entre los 33.14 a los 34.85 ppt.
+Los valores más elevados se encuentran en el canal de la ensenada, y en la porción
+de la laguna más cercana a la mancha urbana de la ciudad de La Paz. Los valores
+bajos se encuentran en la porción oeste de la ensenada-. La figura representa la
+variación espacial de la variable, se maneja una escala de color del verde al rojo,
+representando los valores mínimos a máximos respectivamente.</p>
+              <img src="../IMAGENES/ATLAS/MAPAS 2025 03/sal.jpg" alt=""/>
+            </div>  
+            <div class="subsection" id="seccion_2025-3-od"><h3>Oxígeno disuelto</h3>
+              <p>La escala de variación del DO se encuentra entre los 7.71 a los 8.43 mg/L. Los
+valores más elevados se encuentran en el canal de navegación, cerca del estero de
+El Conchalito y en el margen oeste del mogote. Mientras que las más bajas se
+ubican en la porción oeste y sur de la ensenada. La figura representa la variación
+espacial de la variable, se maneja una escala de color del verde al rojo,
+representando los valores mínimos a máximos respectivamente.</p>
+              <img src="../IMAGENES/ATLAS/MAPAS 2025 03/do.jpg" alt=""/>
+            </div> 
+            <div class="subsection" id="seccion_2025-3-ec"><h3>Conductividad eléctrica</h3>
+              <p>La escala de variación del EC se encuentra entre 50,543 a los 52,906 µS/cm. Los
+valores elevados se encuentran desde en el canal de navegación y se extienden
+dentro de la ensenada hasta abarcar la porción Este. Mientras que las más bajos
+se ubican principalmente en el centro de y Oeste de la ensenada. La figura representa la variación espacial de la variable, se maneja una escala de color del
+verde al rojo, representando los valores mínimos a máximos respectivamente.</p>
+              <img src="../IMAGENES/ATLAS/MAPAS 2025 03/ec.jpg" alt=""/>
+            </div>  
+            <div class="subsection" id="seccion_2025-3-res"><h3>Resistividad</h3>
+              <p>La escala de variación del RES se encuentra entre los 20 a los 22 R.cm. Los valores
+bajos se encuentran en el canal de navegación y en la porción oeste la laguna.
+Mientras que las más altos se ubican en el resto de la ensenada, principalmente al
+oeste del Mogote. La figura representa la variación espacial de la variable, se
+maneja una escala de color del verde al rojo, representando los valores mínimos a
+máximos respectivamente.</p>
+              <img src="../IMAGENES/ATLAS/MAPAS 2025 03/res.jpg" alt=""/>
+            </div>  
+            <div class="subsection" id="seccion_2025-3-tds"><h3>Total de solidos disueltos</h3>
+              <p>La escala de variación del TDS se encuentra entre los 32,833 a los 34,388 mg/L. Los
+valores más elevados se encuentran distribuidos desde el canal de navegación
+hasta la porción este de la ensenada. Mientras que los bajos se ubican desde el
+centro hasta la porción Oeste de la ensenada. La figura representa la variación
+espacial de la variable, se maneja una escala de color del verde al rojo,
+representando los valores mínimos a máximos respectivamente.</p>
+              <img src="../IMAGENES/ATLAS/MAPAS 2025 03/tds.jpg" alt=""/>
+            </div>   
+            <div class="subsection" id="seccion_2025-3-clor"><h3>Clorofila</h3>
+              <p>La escala de variación de la clorofila se encuentra entre los 17 a los 77 µg/L. Los
+valores bajos se encuentran distribuido en zonas del centro del canal, el centro y
+oeste de la ensenada y al este de la misma. Mientras que las más altos se ubican
+en el Sur de casi toda la ensenada. La figura representa la variación espacial de
+la variable, se maneja una escala de color del verde al rojo, representando los
+valores mínimos a máximos respectivamente.</p>
+              <img src="../IMAGENES/ATLAS/MAPAS 2025 03/clor.jpg" alt=""/>
+            </div>   
+            <div class="subsection" id="seccion_2025-3-cdom"><h3>Materia orgánica disuelta</h3>
+              <p>La escala de variación del CDOM se encuentra entre los 371.7 a los 604 µg/L. Los
+valores más elevados se encuentran en toda la extensión del canal de salida, la
+porción sureste de la ensenada mientras que el más bajo se encuentran frente del
+CIBNOR y la porción norte en la ensenada. La figura representa la variación
+espacial de la variable, se maneja una escala de color del verde al rojo,
+representando los valores mínimos a máximos respectivamente</p>
+              <img src="../IMAGENES/ATLAS/MAPAS 2025 03/cdom.jpg" alt=""/>
+            </div> 
+            <div class="subsection" id="seccion_2025-3-orp"><h3>Potencial redox</h3>
+              <p>La escala de variación del ORP se encuentra entre los -32 a los 6 mV. Los valores
+más elevados se encuentran en toda la extensión suroeste de la ensenada, mientras
+que el más bajo se encuentran frente al CICIMAR y el canal. La figura representa
+la variación espacial de la variable, se maneja una escala de color del verde al rojo,
+representando los valores mínimos a máximos respectivamente.</p>
+              <img src="../IMAGENES/ATLAS/MAPAS 2025 03/orp.jpg" alt=""/>
+            </div>   
+          </div> 
+
+      <button class="accordion"><h2>NOVIEMBRE</h2></button>
+        <div class="panel">
+            <p>El día 27 de noviembre de 2025 se llevó a cabo el monitoreo de la laguna Ensenada de La
+Paz, localizadas en La Paz, Baja California Sur, México. Lo anterior con propósito de dar
+cumplimiento al programa presentado en el programa del proyecto con código IPN-SIP
+20240475 "Caracterización hidrológica y bacteriológica de la Laguna La Paz, BCS".
+El monitoreo se llevó a cabo desde las 07: 31:31 hasta las 13: 31:20.</p>
+            <div class="subsection" id="seccion_2025-11-temp"><h3>Temperatura</h3>
+              <p>La escala de variación de la temperatura se encuentra entre los 16.73 a los 25.4 oC.
+Las temperaturas más elevadas se encuentran en canal de salida y en la zona sur
+de la ensenada que coincidentemente se encontraba expuesta en su mayoría por
+la marea baja, mientras que las más bajas se ubican y la porción sur de la ensenada.
+La figura representa la variación espacial de la variable, se maneja una escala de
+color del verde al rojo, representando los valores mínimos a máximos
+respectivamente.</p>
+              <img src="../IMAGENES/ATLAS/MAPAS 2025 11/temp.jpg" alt=""/>
+            </div>      
+            <div class="subsection" id="seccion_2025-11-ph"><h3>Ph</h3>
+              <p>La escala de variación del pH se encuentra entre los 8.09 a los 8.31. Los valores
+más elevados se encuentran en la porción sur de la ensenada, cercanos a la
+mancha urbana de la ciudad de la paz, mientras que los valores bajos se ubican en
+la zona sur del mogote. La figura representa la variación espacial de la variable,
+se maneja una escala de color del verde al rojo, representando los valores mínimos
+a máximos respectivamente </p>
+              <img src="../IMAGENES/ATLAS/MAPAS 2025 11/ph.jpg" alt=""/>
+            </div>   
+            <div class="subsection" id="seccion_2025-11-sal"><h3>Salinidad</h3>
+              <p>La escala de variación de la salinidad se encuentra entre los 29.62 a los 37.2 ppt.
+Los valores más bajos se encuentran en el canal de la ensenada, y en la porción de
+la laguna más cercana a la mancha urbana de la ciudad de La Paz. Los valores
+elevados se encuentran en el interior de la ensenada. La figura representa la
+variación espacial de la variable, se maneja una escala de color del verde al rojo,
+representando los valores mínimos a máximos respectivamente.</p>
+              <img src="../IMAGENES/ATLAS/MAPAS 2025 11/sal.jpg" alt=""/>
+            </div> 
+            <div class="subsection" id="seccion_2025-11-od"><h3>Oxígeno disuelto</h3>
+              <p>La escala de variación del DO se encuentra entre los 5.77 a los 7.58 mg/L. Los
+valores más elevados se encuentran en el canal de navegación, cerca del estero de
+El Conchalito y en el margen oeste del mogote. Mientras que las más bajas se
+ubican en la porción oeste y sur de la ensenada. La figura representa la variación
+espacial de la variable, se maneja una escala de color del verde al rojo,
+representando los valores mínimos a máximos respectivamente.</p>
+              <img src="../IMAGENES/ATLAS/MAPAS 2025 11/do.jpg" alt=""/>
+            </div>  
+            <div class="subsection" id="seccion_2025-11-ec"><h3>Conductividad eléctrica</h3>
+              <p>La escala de variación del EC se encuentra entre 45,734 a los 66,072 µS/cm. Los
+valores balos se encuentran desde en el canal de navegación y se extienden dentro
+de la ensenada. Mientras que las elevados se ubican principalmente en el centro,
+Sur y Oeste de la ensenada. La figura representa la variación espacial de la
+variable, se maneja una escala de color del verde al rojo, representando los valores
+mínimos a máximos respectivamente.</p>
+              <img src="../IMAGENES/ATLAS/MAPAS 2025 11/ec.jpg" alt=""/>
+            </div>   
+            <div class="subsection" id="seccion_2025-11-res"><h3>Resistividad</h3>
+              <p>La escala de variación del RES se encuentra entre los 18 a los 20 R.cm. Los valores
+elevados se encuentran en el canal de navegación y en la porción este de la
+ensenada. Mientras que las más bajos se ubican en el resto de la oeste,
+principalmente al oeste del Mogote. La figura representa la variación espacial de
+la variable, se maneja una escala de color del verde al rojo, representando los
+valores mínimos a máximos respectivamente.</p>
+              <img src="../IMAGENES/ATLAS/MAPAS 2025 11/res.jpg" alt=""/>
+            </div>   
+            <div class="subsection" id="seccion_2025-11-tds"><h3>Total de solidos disueltos</h3>
+              <p>La escala de variación del TDS se encuentra entre los 29,726 a los 39,792 mg/L. Los
+valores bajos se encuentran distribuidos desde el canal de navegación hasta la
+porción este de la ensenada. Mientras que los elevados se ubican desde el centro
+hasta la porción Oeste de la ensenada. La figura representa la variación espacial
+de la variable, se maneja una escala de color del verde al rojo, representando los
+valores mínimos a máximos respectivamente.</p>
+              <img src="../IMAGENES/ATLAS/MAPAS 2025 11/tds.jpg" alt=""/>
+            </div>  
+            <div class="subsection" id="seccion_2025-11-clor"><h3>Clorofila</h3>
+              <p>La escala de variación de la clorofila se encuentra entre los 17 a los 85 µg/L. Los
+valores bajos se encuentran distribuido en el interior de la ensenada y al este de
+esta. Mientras que las más altos se ubican en el canal de navegación. La figura
+representa la variación espacial de la variable, se maneja una escala de color del
+verde al rojo, representando los valores mínimos a máximos respectivamente.</p>
+              <img src="../IMAGENES/ATLAS/MAPAS 2025 11/clor.jpg" alt=""/>
+            </div>  
+            <div class="subsection" id="seccion_2025-11-cdom"><h3>Materia orgánica disuelta</h3>
+              <p>La escala de variación del CDOM se encuentra entre los 208.7 a los 603 µg/L. Los
+valores más elevados se encuentran en toda la extensión oeste de la ensenada
+incluyendo el canal de salida, mientras que el más bajo se encuentran frente del
+CIBNOR. La figura representa la variación espacial de la variable, se maneja una
+escala de color del verde al rojo, representando los valores mínimos a máximos
+respectivamente.</p>
+              <img src="../IMAGENES/ATLAS/MAPAS 2025 11/cdom.jpg" alt=""/>
+            </div>  
+            <div class="subsection" id="seccion_2025-11-orp"><h3>Potencial redox</h3>
+              <p>La escala de variación del ORP se encuentra entre los -36 a los 26 mV. Los valores
+más elevados se encuentran en toda la extensión norte de la ensenada, mientras
+que el más bajo se encuentran frente al CICIMAR y el canal. La figura 11 representa
+la variación espacial de la variable, se maneja una escala de color del verde al rojo,
+representando los valores mínimos a máximos respectivamente.</p>
+              <img src="../IMAGENES/ATLAS/MAPAS 2025 11/orp.jpg" alt=""/>
+            </div> 
+          </div> 
+    
+          </div>
+        </section>
+    
+  </div>
+
+  <!-- Panel lateral derecho -->
+  <div class="sidebar">
+    
+    <button class="accordion">2024</button>
+    <div class="panel">
+      <a href="#seccion_2024">2024</a>
+    </div>
+
+    <button class="accordion">2025</button>
+    <div class="panel">
+      <a href="#seccion_2025">2025</a>
+    </div>
+  </div>
+
+  <script>
+    // Script para desplegables
+    const acc = document.querySelectorAll(".accordion");
+    acc.forEach(button => {
+      button.addEventListener("click", function() {
+        this.classList.toggle("active");
+        const panel = this.nextElementSibling;
+        panel.style.display = panel.style.display === "block" ? "none" : "block";
+      });
+    });
+  </script>
+</body>
+</html>
